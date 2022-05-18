@@ -22,7 +22,7 @@ public class BurgerTest {
     Ingredient ingredient, ingredient2, ingredient3;
 
     @Test
-    public void setBunsTest_SetBun_GetBun(){
+    public void setBunsTest_SetBun_GetBun() {
 
 
         Burger burger = new Burger();
@@ -31,7 +31,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void addIngredientTest(){
+    public void addIngredientTest() {
 
         Burger burger = new Burger();
         burger.addIngredient(ingredient);
@@ -40,7 +40,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void removeIngredientTest(){
+    public void removeIngredientTest() {
 
         Burger burger = new Burger();
         burger.ingredients.add(ingredient);
@@ -49,7 +49,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void moveIngredientTest(){
+    public void moveIngredientTest() {
 
         Burger burger = new Burger();
         burger.ingredients.add(ingredient);
@@ -60,25 +60,28 @@ public class BurgerTest {
     }
 
     @Test
-    public void getPriceTest(){
+    public void getPriceTest() {
 
         Burger burger = new Burger();
         burger.setBuns(bun);
         burger.ingredients.add(ingredient);
+
         Mockito.when(bun.getPrice()).thenReturn(2f);
         Mockito.when(ingredient.getPrice()).thenReturn(6f);
         assertEquals(10f, burger.getPrice(), 0.00);
     }
 
     @Test
-    public void getReceiptTest(){
+    public void getReceiptTest() {
 
         Burger burger = new Burger();
         burger.setBuns(bun);
         burger.ingredients.add(ingredient);
+
         Mockito.when(bun.getName()).thenReturn("булка макаронная");
         Mockito.when(ingredient.getType()).thenReturn(IngredientType.FILLING);
         Mockito.when(ingredient.getName()).thenReturn("цыпленок");
+
         String expected =
                 "(==== булка макаронная ====)\n" +
                         "= filling цыпленок =\n" +
@@ -86,9 +89,6 @@ public class BurgerTest {
                         "\n" +
                         "Price: 0,000000\n";
 
-        System.out.println(expected);
-        System.out.println(burger.getReceipt());
         assertEquals(true, expected.equals(burger.getReceipt()));
     }
-
 }

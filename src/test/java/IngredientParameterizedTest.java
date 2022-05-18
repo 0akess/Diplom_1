@@ -13,21 +13,21 @@ public class IngredientParameterizedTest {
     private final String expected;
     private final IngredientType type;
 
-    public IngredientParameterizedTest(String expected, IngredientType type){
-        this.expected =expected;
+    public IngredientParameterizedTest(String expected, IngredientType type) {
+        this.expected = expected;
         this.type = type;
     }
 
     @Parameterized.Parameters(name = "Тестовые данные: \"{0}\"")
     public static Object[][] getTextData() {
-        return new Object[][] {
+        return new Object[][]{
                 {"SAUCE", IngredientType.SAUCE},
                 {"FILLING", IngredientType.FILLING},
         };
     }
 
     @Test()
-    public void doesHaveManeSexGetBoolean() throws Exception {
+    public void doesHaveManeSexGetBoolean() {
 
         Ingredient ingredient = new Ingredient(type, "test", 10f);
         assertEquals(expected, ingredient.getType().name());
