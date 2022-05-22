@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 public class BunTest {
 
     @Test
-    public void BunTest_() {
+    public void BunTest_SetName_GetName() {
 
         Bun bun = new Bun("test", 1);
         assertEquals("test", bun.getName());

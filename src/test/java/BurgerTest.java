@@ -36,7 +36,6 @@ public class BurgerTest {
         Burger burger = new Burger();
         burger.addIngredient(ingredient);
         assertEquals(ingredient, burger.ingredients.get(0));
-
     }
 
     @Test
@@ -68,6 +67,7 @@ public class BurgerTest {
 
         Mockito.when(bun.getPrice()).thenReturn(2f);
         Mockito.when(ingredient.getPrice()).thenReturn(6f);
+
         assertEquals(10f, burger.getPrice(), 0.00);
     }
 

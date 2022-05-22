@@ -8,12 +8,12 @@ import static org.junit.Assert.assertEquals;
 
 
 @RunWith(Parameterized.class)
-public class IngredientParameterizedTest {
+public class IngredientTypeParameterizedTest {
 
     private final String expected;
     private final IngredientType type;
 
-    public IngredientParameterizedTest(String expected, IngredientType type) {
+    public IngredientTypeParameterizedTest(String expected, IngredientType type) {
         this.expected = expected;
         this.type = type;
     }
