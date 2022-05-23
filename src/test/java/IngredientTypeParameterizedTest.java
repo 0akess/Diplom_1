@@ -6,7 +6,6 @@ import praktikum.IngredientType;
 
 import static org.junit.Assert.assertEquals;
 
-
 @RunWith(Parameterized.class)
 public class IngredientTypeParameterizedTest {
 
@@ -27,7 +26,7 @@ public class IngredientTypeParameterizedTest {
     }
 
     @Test()
-    public void doesHaveManeSexGetBoolean() {
+    public void getIngredientType() {
 
         Ingredient ingredient = new Ingredient(type, "test", 10f);
         assertEquals(expected, ingredient.getType().name());

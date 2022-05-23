@@ -8,9 +8,7 @@ import praktikum.Burger;
 import praktikum.Ingredient;
 import praktikum.IngredientType;
 
-
 import static org.junit.Assert.assertEquals;
-
 
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class BurgerTest {
@@ -23,7 +21,6 @@ public class BurgerTest {
 
     @Test
     public void setBunsTest_SetBun_GetBun() {
-
 
         Burger burger = new Burger();
         burger.setBuns(bun);
